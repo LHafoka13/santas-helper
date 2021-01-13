@@ -1,0 +1,13 @@
+/* #present-img {
+  width: 500px;
+  height: 500px !important;
+} */
+#top-row-buffer {
+  height: 100px;
+}
+
+.card {
+  width: 750px;
+  height: 900px;
+  align-self: center;
+}
