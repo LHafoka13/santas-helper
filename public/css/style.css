@@ -1,3 +1,4 @@
+
 body {
   background-image: url(https://images.unsplash.com/photo-1581434969796-95f4b04d810b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80);
   height: 100%;
@@ -7,6 +8,12 @@ body {
   background-size: cover;
   font-family: "Actor", sans-serif;
 }
+
+
+/* #present-img {
+  width: 500px;
+  height: 500px !important;
+} */
 
 #top-row-buffer {
   height: 100px;
@@ -18,7 +25,10 @@ body {
   align-self: center;
 }
 
+
 #card-title {
   font-family: "Roboto Slab", serif;
   font-size: 50px;
 }
+
+
