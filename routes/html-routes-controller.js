@@ -5,15 +5,27 @@ const router = express.Router();
 const listMember = require("../models/list_members.js");
 
 router.get("/", (req, res) => {
-    console.log("got");
-    // listMember.selectAll((data) => {
-        // const hbsObject = {
-        //     ListMember: data,
-        // };
-        
-    // });
-    // console.log(hbsObject);
-    res.render('index');
+  console.log("got");
+  // listMember.selectAll((data) => {
+  // const hbsObject = {
+  //     ListMember: data,
+  // };
+
+  // });
+  // console.log(hbsObject);
+  res.render("index");
+});
+
+router.get("/lists", (req, res) => {
+  console.log("got");
+  // listMember.selectAll((data) => {
+  // const hbsObject = {
+  //     ListMember: data,
+  // };
+
+  // });
+  // console.log(hbsObject);
+  res.render("lists");
 });
 
 module.exports = router;
