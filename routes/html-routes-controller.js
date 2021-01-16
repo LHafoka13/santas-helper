@@ -7,10 +7,11 @@ const db = require("../models");
 
 router.get("/", (req, res) => {
   console.log("got");
-  
+
   res.render("index");
 });
 
+//LIST MEMBERS PAGE API ROUTES (to display names of list we've created and to create/delete existing lists)
 router.get("/lists", (req, res) => {
   console.log("got");
   //join to include all of EACH List Member's Items
@@ -22,15 +23,37 @@ router.get("/lists", (req, res) => {
     const jsonObject = JSON.parse(JSON.stringify(dbListMember));
 
     const hbsObject = {
-      listmembers: jsonObject, 
-    }
-     console.log(jsonObject);
+      listmembers: jsonObject,
+    };
+    console.log(jsonObject);
     res.render("lists", hbsObject);
   });
 });
 
-router.get('/search', (req, res) => {
-  console.log('got');
+//GIFT ITEMS PAGE API ROUTES (to display the gift items we've created and to create/delete existing gift items)
+router.get("/items", (req, res) => {
+  console.log("gift items");
+
+  //join to include all of EACH List Member's Items
+  db.GiftItem.findAll({
+    //   include: [db.GiftItem],
+  }).then((dbGiftItem) => {
+    // res.json(dbListMember);
+
+    const jsonObject = JSON.parse(JSON.stringify(dbGiftItem));
+
+    const hbsObject = {
+      giftitems: jsonObject,
+    };
+    console.log(jsonObject);
+    res.render("items", hbsObject);
+  });
+
+  res.render("items");
+});
+
+router.get("/search", (req, res) => {
+  console.log("got");
 
   res.render("etsy");
 });
