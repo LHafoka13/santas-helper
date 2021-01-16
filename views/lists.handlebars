@@ -21,7 +21,7 @@
     <div class="row" id="top-row-buffer"></div>
 
     <!--Container to hold formatting below-->
-    <div class="container">
+    <div class="container col s6 offset-s3">
 
         <!--second row for "Add List" text-->
         <div class="row">
@@ -45,15 +45,15 @@
 
         <!--fifth row for unordered list to generate data from ListMembers table-->
         <div class="row">
-            <div class="col s6 offset-s3">
+            <div class="col s6 offset-s3" id="listmember-container">
                 <span class"flow-text">
-                    <div class="card large sticky-action #b71c1c red darken-4" id="xmas-card">
-                        <ul class="list-names">
+                    <div class="card large sticky-action red darken-4" id="xmas-card">
+                        <ul class="list-names collection">
                             {{#each listmembers}}
-                            <li>
+                            <li class="collection-item green darken-1">
                                 {{name}}
                                 <a class="waves-effect waves-light btn" id="add-to-list-btn">Add to List</a>
-                                <a class="waves-effect waves-light btn red darken-1" id="delete-btn">Delete</a>
+                                <a class="waves-effect waves-light btn secondary-content red darken-1" id="delete-btn">Delete</a>
                             </li>
                             {{/each}}
                         </ul>
@@ -61,6 +61,7 @@
                 </span>
             </div>
         </div>
+    </div>
                     <p id="api-results">API RESULTS DISPLAY HERE PLZ</p>
                     <!--JavaScript at end of body for optimized loading-->
                     <script type="text/javascript" src="js/materialize.min.js"></script>
