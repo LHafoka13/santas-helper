@@ -11,7 +11,9 @@ router.get("/", (req, res) => {
   res.render("index");
 });
 
+
 //LIST MEMBERS PAGE API ROUTES (to display names of list we've created and to create/delete existing lists)
+
 router.get("/lists", (req, res) => {
   console.log("got");
   //join to include all of EACH List Member's Items
