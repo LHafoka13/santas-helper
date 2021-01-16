@@ -20,7 +20,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
 // Routes
-require('./routes/api-routes.js')(app);
+require('./routes/list-api-routes.js')(app);
 const htmlRoute = require('./routes/html-routes-controller.js');
 
 app.use(htmlRoute);

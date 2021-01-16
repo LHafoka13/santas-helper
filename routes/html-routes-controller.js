@@ -2,36 +2,37 @@ const express = require("express");
 
 const router = express.Router();
 
-const listMember = require("../models/list_members.js");
+const db = require("../models");
+// const listMember = require("../models/list_members.js");
 
 router.get("/", (req, res) => {
   console.log("got");
-  // listMember.selectAll((data) => {
-  // const hbsObject = {
-  //     ListMember: data,
-  // };
-
-  // });
-  // console.log(hbsObject);
+  
   res.render("index");
 });
 
 router.get("/lists", (req, res) => {
   console.log("got");
-  // listMember.selectAll((data) => {
-  // const hbsObject = {
-  //     ListMember: data,
-  // };
+  //join to include all of EACH List Member's Items
+  db.ListMember.findAll({
+    //   include: [db.GiftItem],
+  }).then((dbListMember) => {
+    // res.json(dbListMember);
 
-  // });
-  // console.log(hbsObject);
-  res.render("lists");
+    const jsonObject = JSON.parse(JSON.stringify(dbListMember));
 
-  router.get('/search', (req, res) => {
-    console.log('got');
+    const hbsObject = {
+      listmembers: jsonObject, 
+    }
+     console.log(jsonObject);
+    res.render("lists", hbsObject);
+  });
+});
 
-    res.render("etsy");
-  } )
+router.get('/search', (req, res) => {
+  console.log('got');
+
+  res.render("etsy");
 });
 
 module.exports = router;
