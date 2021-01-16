@@ -23,12 +23,12 @@
     <!--Container to hold formatting below-->
     <div class="container">
 
-    <!--second row for "Add List" text-->
+        <!--second row for "Add List" text-->
         <div class="row">
             <h2 id="lists-title">Add A List</h2>
         </div>
-    
-    <!--third row for entering a name to create a list-->
+
+        <!--third row for entering a name to create a list-->
         <div class="row">
             <div class="input-field col s9">
                 <textarea id="textarea1" class="materialize-textarea"></textarea>
@@ -37,27 +37,33 @@
             <a class="waves-effect waves-light btn col s3">Create List</a>
         </div>
 
-    <!--fourth row for "My Lists" text-->
+        <!--fourth row for "My Lists" text-->
         <div class="row">
             <h2 id="lists-title">My Lists</h2>
         </div>
 
 
-    <!--fifth row for unordered list to generate data from ListMembers table-->
-        <ul class="list-names">
-            {{#each listmembers}}
-            <li>
-                {{this.name}}
-                <a class="waves-effect waves-light btn" id="add-to-list-btn">Add to List</a>
-                <a class="waves-effect waves-light btn red darken-1" id="delete-btn">Delete</a>
-            </li>
-            {{/each}}
-        </ul>
-
-    </div>
-    <p id="api-results">API RESULTS DISPLAY HERE PLZ</p>
-    <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+        <!--fifth row for unordered list to generate data from ListMembers table-->
+        <div class="row">
+            <div class="col s6 offset-s3">
+                <span class"flow-text">
+                    <div class="card large sticky-action #b71c1c red darken-4" id="xmas-card">
+                        <ul class="list-names">
+                            {{#each listmembers}}
+                            <li>
+                                {{name}}
+                                <a class="waves-effect waves-light btn" id="add-to-list-btn">Add to List</a>
+                                <a class="waves-effect waves-light btn red darken-1" id="delete-btn">Delete</a>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </span>
+            </div>
+        </div>
+                    <p id="api-results">API RESULTS DISPLAY HERE PLZ</p>
+                    <!--JavaScript at end of body for optimized loading-->
+                    <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 
 </html>
