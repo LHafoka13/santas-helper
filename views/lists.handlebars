@@ -44,7 +44,15 @@
 
 
     <!--fifth row for unordered list to generate data from ListMembers table-->
-    
+        <ul class="list-names">
+            {{#each listmembers}}
+            <li>
+                {{this.name}}
+                <a class="waves-effect waves-light btn" id="add-to-list">Add to List</a>
+            </li>
+            {{/each}}
+        </ul>
+
     </div>
     <p id="api-results">API RESULTS DISPLAY HERE PLZ</p>
     <!--JavaScript at end of body for optimized loading-->
