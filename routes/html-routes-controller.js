@@ -26,6 +26,12 @@ router.get("/lists", (req, res) => {
   // });
   // console.log(hbsObject);
   res.render("lists");
+
+  router.get('/search', (req, res) => {
+    console.log('got');
+
+    res.render("etsy");
+  } )
 });
 
 module.exports = router;

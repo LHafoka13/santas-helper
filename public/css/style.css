@@ -30,3 +30,8 @@ body {
   color: azure;
   text-align: center;
 }
+
+#api-search-title,
+#search-results {
+  color: azure;
+}
