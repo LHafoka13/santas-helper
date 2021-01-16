@@ -1,2 +1,2 @@
-INSERT INTO listmembers (name, createdAt) VALUES ("Lindsay", 11);
-INSERT INTO listmembers (name, createdAt) VALUES ("Lily", 11);
+INSERT INTO listmembers (name, createdAt, updatedAt) VALUES ("Lindsay", "2021-01-15 11:00:00", "2021-01-15 11:00:00");
+INSERT INTO listmembers (name, createdAt, updatedAt) VALUES ("Lily", "2021-01-15 11:00:00", "2021-01-15 11:00:00");
