@@ -17,8 +17,35 @@
 </head>
 
 <body>
+    <!--first row for top 'header buffer'-->
     <div class="row" id="top-row-buffer"></div>
-    <h1 id="lists-title">TESTING API STUFF</h1>
+
+    <!--Container to hold formatting below-->
+    <div class="container">
+
+    <!--second row for "Add List" text-->
+        <div class="row">
+            <h2 id="lists-title">Add A List</h2>
+        </div>
+    
+    <!--third row for entering a name to create a list-->
+        <div class="row">
+            <div class="input-field col s9">
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">Add Name Here</label>
+            </div>
+            <a class="waves-effect waves-light btn col s3">Create List</a>
+        </div>
+
+    <!--fourth row for "My Lists" text-->
+        <div class="row">
+            <h2 id="lists-title">My Lists</h2>
+        </div>
+
+
+    <!--fifth row for unordered list to generate data from ListMembers table-->
+    
+    </div>
     <p id="api-results">API RESULTS DISPLAY HERE PLZ</p>
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>

@@ -10,4 +10,8 @@ module.exports = (app) => {
   app.get('/api/lists', (req, res) => {
     db.ListMember.findAll({}).then((dbListMember) => res.json(dbListMember));
   })
+
+  
 };
+
+
