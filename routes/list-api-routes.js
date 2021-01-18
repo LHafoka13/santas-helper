@@ -36,5 +36,43 @@ module.exports = (app) => {
         id: req.params.id,
       },
     }).then((dbListMember) => res.json(dbListMember));
+
+  });
+
+  //GIFT ITEMS API CALL DO NOT TOUCH THESE
+
+  app.get("/api/items", (req, res) => {
+    //join to include all of EACH List Member's GiftItems
+    db.GiftItems.findAll({
+      // include: [db.GiftItem],
+    }).then((dbGiftItem) => {
+      res.json(dbGiftItem);
+    });
+  });
+
+  //api call to call one record in the gift_items db
+  app.get("/api/items/:id", (req, res) => {
+    //join to include all of ONE of the List Member's Items
+    db.GiftItem.findOne({
+      where: {
+        id: req.params.id,
+      },
+      // include: [db.GiftItem],
+    }).then((dbGiftItem) => res.json(dbGiftItem));
+  });
+
+  // api call to post (create) one record in the gift_items db
+  app.post("/api/items", (req, res) => {
+    db.GiftItem.create(req.body).then((dbGiftItem) => res.json(dbGiftItem));
+  });
+
+  // api call to delete (delete) one record in the gift_items db
+  app.delete("/api/items/:id", (req, res) => {
+    db.GiftItem.destroy({
+      where: {
+        id: req.params.id,
+      },
+    }).then((dbGiftItem) => res.json(dbGiftItem));
+
   });
 };
