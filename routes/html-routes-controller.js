@@ -11,7 +11,6 @@ router.get("/", (req, res) => {
   res.render("index");
 });
 
-
 //LIST MEMBERS PAGE API ROUTES (to display names of list we've created and to create/delete existing lists)
 
 router.get("/lists", (req, res) => {
@@ -50,9 +49,98 @@ router.get("/items", (req, res) => {
     console.log(jsonObject);
     res.render("items", hbsObject);
   });
-
-  res.render("items");
 });
+
+//   router.get("/api/items", (req, res) => {
+//     const query = {};
+//     if (req.query.listmember_id) {
+//       query.ListMemberId = req.query.listmember_id;
+//     }
+//     // Here we add an "include" property to our options in our findAll query
+//     // We set the value to an array of the models we want to include in a left outer join
+//     // In this case, just db.ListMember
+//     db.Post.findAll({
+//       where: query,
+//       include: [db.ListMember],
+//     }).then((dbGiftItem) => {
+//       const jsonObject = JSON.parse(JSON.stringify(dbGiftItem));
+
+//       const hbsObject = {
+//         giftitems: jsonObject,
+//       };
+//       console.log(jsonObject);
+//       res.render("items", hbsObject);
+//     });
+//   });
+
+//   // Get route for retrieving a single gift item
+//   router.get("/api/items/:id", (req, res) => {
+//     // Here we add an "include" property to our options in our findOne query
+//     // We set the value to an array of the models we want to include in a left outer join
+//     // In this case, just db.ListMember
+//     db.GiftItem.findOne({
+//       where: {
+//         id: req.params.id,
+//       },
+//       include: [db.ListMember],
+//     }).then((dbGiftItem) => {
+//       // res.json(dbListMember);
+
+//       const jsonObject = JSON.parse(JSON.stringify(dbGiftItem));
+
+//       const hbsObject = {
+//         giftitems: jsonObject,
+//       };
+//       console.log(jsonObject);
+//       res.render("items", hbsObject);
+//     });
+//   });
+
+// POST route for saving a new gift item to the gift_items db
+// router.post("/api/items", (req, res) => {
+//   db.GiftItem.create(req.body).then((dbGiftItem) => {
+//     // res.json(dbListMember);
+
+//     const jsonObject = JSON.parse(JSON.stringify(dbGiftItem));
+
+//     const hbsObject = {
+//       giftitems: jsonObject,
+//     };
+//     console.log(jsonObject);
+//     res.render("items", hbsObject);
+//   });
+// });
+
+//   // DELETE route for deleting gift items
+//   router.delete("/api/items/:id", (req, res) => {
+//     db.GiftItem.destroy({
+//       where: {
+//         id: req.params.id,
+//       },
+//     }).then((dbGiftItem) => {
+//       // res.json(dbListMember);
+
+//       const jsonObject = JSON.parse(JSON.stringify(dbGiftItem));
+
+//       const hbsObject = {
+//         giftitems: jsonObject,
+//       };
+//       console.log(jsonObject);
+//       res.render("items", hbsObject);
+//     });
+//   });
+
+//   // PUT route for updating gift items
+//   router.put("/api/items", (req, res) => {
+//     db.GiftItem.update(req.body, {
+//       where: {
+//         id: req.body.id,
+//       },
+//     }).then((dbGiftItem) => res.json(dbGiftItem));
+//   });
+
+//   res.render("items");
+// });
 
 router.get("/search", (req, res) => {
   console.log("got");
