@@ -31,10 +31,10 @@
         <!--third row for entering a name to create a list-->
         <div class="row">
             <div class="input-field col s9">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <textarea id="textarea1 add-list-member" class="materialize-textarea"></textarea>
                 <label for="textarea1">Add Name Here</label>
             </div>
-            <a class="waves-effect waves-light btn col s3">Create List</a>
+            <a class="waves-effect waves-light btn col s3" id="create-list-btn">Create List</a>
         </div>
 
         <!--fourth row for "My Lists" text-->
@@ -53,7 +53,7 @@
                             {{#each listmembers}}
                             <li class="collection-item green darken-1">
                                 {{name}}
-                                <a class="waves-effect waves-light btn" id="add-to-list-btn">Add to List</a>
+                                <a class="waves-effect waves-light btn" id="add-to-list-btn" href="items">Add to List</a>
                                 <a class="waves-effect waves-light btn secondary-content red darken-1" id="delete-btn">Delete</a>
                             </li>
                             {{/each}}
