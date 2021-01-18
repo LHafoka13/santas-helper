@@ -36,6 +36,7 @@ module.exports = (app) => {
         id: req.params.id,
       },
     }).then((dbListMember) => res.json(dbListMember));
+
   });
 
   //GIFT ITEMS API CALL DO NOT TOUCH THESE
@@ -72,5 +73,6 @@ module.exports = (app) => {
         id: req.params.id,
       },
     }).then((dbGiftItem) => res.json(dbGiftItem));
+
   });
 };

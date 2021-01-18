@@ -13,6 +13,8 @@ router.get("/", (req, res) => {
 
 //LIST MEMBERS PAGE API ROUTES (to display names of list we've created and to create/delete existing lists)
 
+//LIST MEMBERS PAGE API ROUTES (to display names of list we've created and to create/delete existing lists)
+
 router.get("/lists", (req, res) => {
   console.log("got");
   //join to include all of EACH List Member's Items
@@ -49,6 +51,7 @@ router.get("/items", (req, res) => {
     console.log(jsonObject);
     res.render("items", hbsObject);
   });
+
 });
 
 //   router.get("/api/items", (req, res) => {
@@ -141,6 +144,10 @@ router.get("/items", (req, res) => {
 
 //   res.render("items");
 // });
+
+
+  res.render("items");
+};
 
 router.get("/search", (req, res) => {
   console.log("got");
