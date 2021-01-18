@@ -146,8 +146,8 @@ router.get("/items", (req, res) => {
 // });
 
 
-  res.render("items");
-};
+//   res.render("items");
+// };
 
 router.get("/search", (req, res) => {
   console.log("got");
