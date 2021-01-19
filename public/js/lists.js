@@ -8,7 +8,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
         const createListMemberBtn = document.getElementById("create-list-btn");
 
         createListMemberBtn.addEventListener("click", (e) => {
+            console.log("clicked");
             e.preventDefault();
+            console.log("clicked");
             console.log("loading");
 
             const newListMember = {
@@ -16,6 +18,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
                 name: document.getElementById("add-list-member").value.trim(),
             };
 
+            console.log(newListMember);
             fetch('api/lists', {
                 method: 'POST',
                 headers: {
@@ -31,7 +34,26 @@ document.addEventListener("DOMContentLoaded", (e) => {
             })
         })
 
-        //
+        //deletes a List Member
+        document.querySelectorAll('.delete-btn').forEach(deleteBtn => {
+            deleteBtn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    console.log("clicked");
 
-    }
-})
+                    const id = e.target.getAttribute("data-id");
+                    console.log(id);
+
+                    fetch(`api/lists/${id}`, {
+                        method: 'DELETE',
+                        headers: {
+                            Accept: 'application/json',
+                            'Content-Type': 'application/json',
+                        },
+                    }).then(() => {
+                        console.log("deleted list member");
+                        location.reload();
+                    })
+                });
+        });
+    };
+});

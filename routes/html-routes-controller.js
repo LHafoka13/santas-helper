@@ -33,6 +33,47 @@ router.get("/lists", (req, res) => {
   });
 });
 
+
+//POST request for adding a new List Member to list members <ul>
+router.post("/lists", (req, res) => {
+  console.log("adding");
+  db.ListMember.create(req.body)
+  .then((dbListMember) => {
+      res.json(dbListMember);
+
+      const jsonObject = JSON.parse(JSON.stringify(dbListMember))
+
+      const hbsOjbect = {
+        listmembers: jsonObject,
+      };
+      console.log(jsonObject);
+      res.render("lists", hbsOjbect);
+  })
+})
+
+
+//DELETE request to delete a list member from the Listmembers db
+
+router.delete("/api/delete/:id", (req, res) => {
+  console.log("deleting");
+  db.ListMember.destroy({
+    where: {
+      id: req.params.id,
+    },
+  }).then((dbListMember) => {
+    // res.json(dbListMember);
+
+    const jsonObject = JSON.parse(JSON.stringify(dbListMember));
+
+    const hbsObject = {
+      listmembers: jsonObject,
+    };
+    console.log(jsonObject);
+    res.render("lists", hbsObject);
+  });
+});
+
+
 //GIFT ITEMS PAGE API ROUTES (to display the gift items we've created and to create/delete existing gift items)
 router.get("/items", (req, res) => {
   console.log("gift items");
