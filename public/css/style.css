@@ -14,7 +14,7 @@ body {
 }
 
 .card {
-  width: 750px;
+  width: 100%;
   height: 900px;
   align-self: center;
 }
@@ -41,5 +41,14 @@ body {
 }
 
 #listmember-container {
-  align-self: center;
+  align-items: center;
+  
+}
+
+#xmas-card {
+  align-items: center;
+}
+
+.list-member-collection {
+  height: 80px;
 }
