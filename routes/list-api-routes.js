@@ -24,7 +24,7 @@ module.exports = (app) => {
 
   // api call to post (create) one record in the list_members db
   app.post("/api/lists", (req, res) => {
-    db.ListMember.create(req.body.name).then((dbListMember) =>
+    db.ListMember.create(req.body).then((dbListMember) =>
       res.json(dbListMember)
     );
   });
