@@ -7,7 +7,6 @@ module.exports = (sequelize, DataTypes) => {
   // // Add a belongsTo association to lists here
   // GiftItem.associate = function (models) {
   //   GiftItem.belongsTo(models.list_members, {
-  //     onDelete: "CASCADE",
   //     foreignKey: {
   //       allowNull: false,
   //     },
