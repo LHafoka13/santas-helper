@@ -19,6 +19,8 @@ const db = require("../models");
   });
 
 
+  //nothing
+
   // api call to post (create) one record in the gift_items db
   app.post("/api/items", (req, res) => {
     db.GiftItem.create(req.body).then((dbGiftItem) => res.json(dbGiftItem));
