@@ -196,4 +196,11 @@ router.get("/search", (req, res) => {
   res.render("etsy");
 });
 
+//HTML route to generate members.handlebars via browser
+router.get("/members", (req, res) => {
+  console.log("got");
+
+  res.render("members");
+})
+
 module.exports = router;
