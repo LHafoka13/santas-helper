@@ -7,22 +7,39 @@ const db = require("../models");
 
     const query = {};
 
+
+    if (req.query.id) {
+      query.ListMemberId = req.query.id;
+    }
+    
+    db.GiftItem.findAll({
+      // where: query,
+
     if (req.query.listmember_id) {
       query.listmemberId = req.query.listmember_id;
     }
     
     db.GiftItem.findAll({
       where: query,
+
       include: [db.ListMember],
     }).then((dbGiftItem) => 
     console.log(dbGiftItem));
   });
 
 
+
+  //nothing
+
+
+
   // api call to post (create) one record in the gift_items db
   app.post("/api/items", (req, res) => {
     db.GiftItem.create(req.body).then((dbGiftItem) => res.json(dbGiftItem));
   });
+
+
+  // app.put
 
   // api call to delete (delete) one record in the gift_items db
   // app.delete("/api/items/:id", (req, res) => {
@@ -31,6 +48,16 @@ const db = require("../models");
   //       id: req.params.id,
   //     },
   //   }).then((dbGiftItem) => res.json(dbGiftItem));
+
+
+  // api call to delete (delete) one record in the gift_items db
+  // app.delete("/api/items/:id", (req, res) => {
+  //   db.GiftItem.destroy({
+  //     where: {
+  //       id: req.params.id,
+  //     },
+  //   }).then((dbGiftItem) => res.json(dbGiftItem));
+
 
   // });
 };
