@@ -20,6 +20,7 @@ app.use(express.static("public"));
 
 //html route dependencies
 require("./routes/list-api-routes.js")(app);
+require("./routes/item-api-routes.js")(app);
 const htmlRoute = require("./routes/html-routes-controller.js");
 
 app.use(htmlRoute);
