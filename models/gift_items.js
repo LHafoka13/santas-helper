@@ -4,8 +4,9 @@ module.exports = (sequelize, DataTypes) => {
     desc: DataTypes.STRING,
   });
 
-  // GiftItem.associate = (models) => {
-  //   GiftItem.belongsTo(models.ListMember, {
+  // // Add a belongsTo association to lists here
+  // GiftItem.associate = function (models) {
+  //   GiftItem.belongsTo(models.list_members, {
   //     foreignKey: {
   //       allowNull: false, 
   //     },
