@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   // GiftItem.associate = function (models) {
   //   GiftItem.belongsTo(models.list_members, {
   //     foreignKey: {
-  //       allowNull: false,
+  //       allowNull: false, 
   //     },
   //   });
   // };
