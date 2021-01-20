@@ -7,12 +7,12 @@ const db = require("../models");
 
     const query = {};
 
-    if (req.query.listmember_id) {
-      query.listmemberId = req.query.listmember_id;
+    if (req.query.id) {
+      query.ListMemberId = req.query.id;
     }
     
     db.GiftItem.findAll({
-      where: query,
+      // where: query,
       include: [db.ListMember],
     }).then((dbGiftItem) => 
     console.log(dbGiftItem));
@@ -23,6 +23,8 @@ const db = require("../models");
   app.post("/api/items", (req, res) => {
     db.GiftItem.create(req.body).then((dbGiftItem) => res.json(dbGiftItem));
   });
+
+  // app.put
 
   // api call to delete (delete) one record in the gift_items db
   // app.delete("/api/items/:id", (req, res) => {
