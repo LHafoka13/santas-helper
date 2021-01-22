@@ -1,29 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM Loaded");
 
-    const memberContainer = document.querySelector(".member-container");
+    document.querySelectorAll('.delete-btn').forEach(deleteBtn => {
+        deleteBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                console.log("clicked");
 
-    let giftItems;
+                const id = e.target.getAttribute("data-id");
+                console.log(id);
 
-    const getgifts = (listmember) => {
-        listmemberId = listmember || '';
-
-        if (listmemberId) {
-           listmemberId = `/lists?=${listmemberId}` 
-        }
-
-        fetch(`/api/items${listmemberId}`, {
-            method: 'GET',
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            giftItems = data;
-            console.log("success getting data:", giftItems);
-        })
-    }
-
-    getgifts()
-});
+                fetch(`../api/items/${id}`, {
+                    method: 'DELETE',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                }).then(() => {
+                    console.log("deleted gift item");
+                    location.reload();
+                })
+            });
+    });
+})

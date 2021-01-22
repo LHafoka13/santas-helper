@@ -1,14 +1,14 @@
 module.exports = (sequelize, DataTypes) => {
-    const ListMember = sequelize.define('ListMember', {
-      name: DataTypes.STRING,
-      // giftItems: DataTypes.JSON,
+  const ListMember = sequelize.define('ListMember', {
+    name: DataTypes.STRING,
+    
+  });
+
+  ListMember.associate = (models) => {
+    ListMember.hasMany(models.GiftItem, {
+      onDelete: 'cascade',
     });
-
-    // ListMember.associate = (models) => {
-    //   ListMember.hasMany(models.GiftItem, {
-    //     onDelete: 'cascade',
-    //   });
-    // };
-
-    return ListMember;
   };
+
+  return ListMember;
+};
