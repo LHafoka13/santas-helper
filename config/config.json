@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "N!cholas15",
+    "password": "Ettajames15!",
     "database": "santas_helper_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "N!cholas15",
+    "password": "Ettajames15!",
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"

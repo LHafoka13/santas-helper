@@ -6,8 +6,9 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
+    "heroku": "^7.47.11",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.4.0"
   },
   "devDependencies": {},
   "scripts": {
